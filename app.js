@@ -23,20 +23,20 @@ const articleSchema = {
 
 const Article = mongoose.model("Article", articleSchema);
 
-///////////////////////////////////Requests Targetting all Articles////////////////////////
+///////////////Requests Targetting all Articles////////////
 
 app.route("/articles")
 
 .get(function(req, res){
-  Article.find(function(err, foundArticles){
-    if (!err) {
-      res.send(foundArticles);
-    } else {
-      res.send(err);
-    }
-  });
-})
-
+    Article.find(function(err, foundArticles){
+      if (!err) {
+        res.send(foundArticles);
+      } else {
+        res.send(err);
+      }
+    });
+  })
+  
 .post(function(req, res){
 
   const newArticle = new Article({
